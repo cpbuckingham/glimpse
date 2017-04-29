@@ -2,7 +2,12 @@
 <html lang="en">
 
 <% include ../partials/head %>
-
+<style>
+img {
+    height: 10%;
+    width: 10%;
+}
+</style>
 	<body>
 
 		<div class="wrapper">
@@ -132,10 +137,11 @@
                           <br>
                           Congrats! You have reached more than 50 submissions and now you can compile the info  <button id="button" type="submit" class="btn btn-info pull-right">Compile Data</button>
                           <div style="display:none;" id="load" >
-                            <img width="50px;" height:"50px;" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"/>
+                            <img width="50px;" height:"50px;" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"/><br><br><br><br><br>
                           </div>
                           <% } %>
 									</div>
+                  <center><img style="height:25%; width:25%; display:none" class="pinwheel" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"></center>
                   <div style="display:none;" class="plotly">
                       <a href="https://plot.ly/~EarlynR/34/?share_key=FyoTnfk6NjQ13tEm8vxnux" target="_blank" title="t-SNE Representation of Doc2Vec Arrays" style="display: block; text-align: center;">
                         <img src="https://plot.ly/~EarlynR/34.png?share_key=FyoTnfk6NjQ13tEm8vxnux" alt="t-SNE Representation of Doc2Vec Arrays" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
@@ -155,9 +161,13 @@
 
   $(document).ready(function(){
     $('#button').click(function(){
-      $('.plotly').fadeIn( "slow", function(){
-      });
+      $('.pinwheel').fadeIn( "slow", function(){
+        $( this ).fadeOut(3000);
+        $('.plotly').fadeIn(2000);
     });
   });
+});
+
+
   </script>
 </html>

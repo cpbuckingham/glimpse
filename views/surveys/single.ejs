@@ -137,4 +137,25 @@
 
 </body>
 
+<script>
+$(document).ready(function(){
+  $('#blah').click(function(){
+    $.ajax({
+      url: 'https://api.athenahealth.com/preview1/195900/appointments/1/checkin',
+      headers: {
+          'Authorization':'Bearer' + ATHENA_TOKEN,
+          'X-Originating-Ip':ATHENA_IP,
+          'Content-Type':'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      dataType: 'json',
+      data: YourData,
+      success: function(data){
+        console.log('succes: '+data);
+    }
+  });
+});
+});
+</script>
+
 </html>

@@ -191,6 +191,27 @@
 
 	</body>
 
+	<script>
+	$(document).ready(function(){
+    $('#blah').click(function(){
+			$.ajax({
+		    url: 'https://api.athenahealth.com/preview1/195900/patients',
+		    headers: {
+		        'Authorization':'Bearer' + ATHENA_TOKEN,
+		        'X-Originating-Ip':ATHENA_IP,
+		        'Content-Type':'application/x-www-form-urlencoded'
+		    },
+		    method: 'POST',
+		    dataType: 'json',
+		    data: YourData,
+		    success: function(data){
+		      console.log('succes: '+data);
+	    }
+	  });
+	});
+});
+	</script>
+
 	<script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="../js/material.min.js" type="text/javascript"></script>
