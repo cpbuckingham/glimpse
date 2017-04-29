@@ -144,4 +144,19 @@ describe("Task Add/Edit Page", function () {
     });
 });
 
+describe("Analyze Page", function () {
+    it("should display the analysis page", function (done) {
+        request.get("/auth/analysis")
+          .end(function(err, res) {
+              if(err){
+                  done(err);
+              }
+              knex("tasks").where("id", 1).first().then(function(data) {
+                  expect(res.text).to.contain(data.username);
+                  done();
+              });
+          });
+    });
+});
+
 //Hardly enough tests here, but it should work for the MVP
