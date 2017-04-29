@@ -59,6 +59,12 @@
 							<p>Submissions</p>
 						</a>
 					</li>
+					<li>
+						<a href="/auth/analysis">
+							<i class="material-icons">pageview</i>
+							<p>Analysis</p>
+						</a>
+					</li>
 					<li class="active-pro">
 						<a href="/auth/logout">
 							<i class="material-icons">unarchive</i>
@@ -155,7 +161,7 @@
 											</div>
 											<div class="input-field col-md-6">
 												<label class="control-label">Gender</label>
-												<select value="<%=survey.type%>" name="gender" required>
+												<select value="<%=patient.gender%>" name="gender" required>
 																		<option value="" disabled selected><%=patient.gender%></option>
 																		<option value="male">Male</option>
 																		<option value="female">Female</option>
