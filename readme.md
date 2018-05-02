@@ -20,7 +20,7 @@ Assets used
 
 Tested & Linted & Open-source
 * clone > npm install
-* running pg > createdb > knex migrate:latest > knex run:seed
+* running pg > createdb > knex migrate:latest > knex seed:run
 * nodemon > ... have fun
 
 
